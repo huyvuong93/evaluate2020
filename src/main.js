@@ -3,11 +3,27 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import VueApollo from "vue-apollo";
+import ApolloClient from 'apollo-boost';
+import gql from 'graphql-tag';
+
+
+// create a provider
+
+const apolloProvider = new VueApollo({
+  defaultClient : new ApolloClient({
+    uri: 'https://my-project.hasura.app/v1/graphql'
+  })
+})
+
+Vue.use(VueApollo, gql);
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
+  apolloProvider,
   store,
   render: h => h(App)
 }).$mount('#app')
+

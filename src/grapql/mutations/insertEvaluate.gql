@@ -1,0 +1,18 @@
+const ADD_EVALUATION = gql `
+  mutation ($booth_number: numeric) {
+  insert_evaluate(objects: {booth_number: $booth_number}) {
+    affected_rows
+    returning {
+      id
+      booth_number
+      plan
+      coding
+      design
+      presentation
+      comment
+      author
+      created_at
+    }
+  }
+}
+`;

@@ -1,0 +1,7 @@
+query allStudents{
+  students{
+    id
+    student_id
+    booth_number
+  }
+}

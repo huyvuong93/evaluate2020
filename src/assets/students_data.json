@@ -1,0 +1,73 @@
+[
+    {   
+        "booth_number":"1",
+        "id":"19aw0101",
+        "members":[
+            {"id":"19aw0120"},
+            {"id":"19aw0128"},
+            {"id":"19aw0131"}
+        ],
+        "grade":"2"
+    },
+    {
+        "booth_number":"2" ,
+        "id":"19aw0102",
+        "members":[
+            {"id":"19aw0102"}
+        ],
+        "grade":"2"
+    },
+    {
+        "booth_number":"3" ,
+        "id":"19aw0103",
+        "grade":"2"
+    },
+    {
+        "booth_number":"4" ,
+        "id":"19aw0104",
+        "grade":"2"
+    },
+    {
+        "booth_number":"5" ,
+        "id":"19aw0105",
+        "grade":"2"
+    },
+    {
+        "booth_number":"6" ,
+        "id":"19aw0106",
+        "grade":"2"
+    },
+    {
+        "booth_number":"7" ,
+        "id":"19aw0107",
+        "grade":"2"
+    },
+    {
+        "booth_number":"8" ,
+        "id":"19aw0108",
+        "grade":"2"
+    },
+    {
+        "booth_number":"9" ,
+        "id":"19aw0109",
+        "grade":"2"
+    },
+
+
+
+
+
+
+
+
+    {
+        "booth_number":"4",
+        "id":"20aw0101",
+        "grade":"1"
+    },
+    {   
+        "booth_number":"41",
+        "id":"20aw0102",
+        "grade":"1"
+    }
+]
