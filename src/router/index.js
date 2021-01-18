@@ -35,7 +35,7 @@ const routes = [
     path: '/login',
     name: 'StudentLogin',
     component: () => import('../views/Studentlogin.vue')
-  }
+  },
 ]
 
 const router = new VueRouter({

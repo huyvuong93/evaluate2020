@@ -39,43 +39,51 @@
                 <div v-else-if="error"> 404 </div>               
                 <div v-if="data" >
                     <div> 
+                        
                         <div v-for="student in data.students" :key="student.id"> 
                           <h5>{{student.student_id}}</h5>
+                          <div id="chart">
+                            <apexchart type="donut" width="380" :options="chartOptions" 
+                            :series="[student.evaluation_aggregate.aggregate.sum.design,
+                            student.evaluation_aggregate.aggregate.sum.coding,
+                            student.evaluation_aggregate.aggregate.sum.presentation,
+                            student.evaluation_aggregate.aggregate.sum.plan]"></apexchart>
+                          </div>
                           <div class="point-sum">
                             <div class="point-title">
                               <p>デザイン</p>
-                              <p>{{ student.evaluation_aggregate.aggregate.sum.design }} <span>点</span></p>
+                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.design }} <span>点</span></p>
                             </div>
                             <div class="point-title">
                               <p>コーディング</p>
-                              <p>{{ student.evaluation_aggregate.aggregate.sum.coding }} <span>点</span></p>
+                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.coding }} <span>点</span></p>
                             </div>
                             <div class="point-title">
                               <p>プレゼンテーション</p>
-                              <p>{{ student.evaluation_aggregate.aggregate.sum.presentation }} <span>点</span></p>
+                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.presentation }} <span>点</span></p>
                             </div>
                             <div class="point-title">
                               <p>企画</p>
-                              <p>{{ student.evaluation_aggregate.aggregate.sum.plan }} <span>点</span></p>
+                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.plan }} <span>点</span></p>
                             </div>
                           </div>
                           <div class="evaluate-list" v-for="evaluate in student.evaluation" :key="evaluate.id">
                               <div class="point-list">
                                 <div>
                                   <p>デザイン</p>
-                                  <p> {{evaluate.design}}<span>点</span></p>
+                                  <p :class="changeClass"> {{evaluate.design}}<span>点</span></p>
                                 </div>
                                 <div>
                                   <p>コーディング</p>
-                                  <p> {{evaluate.coding}}<span>点</span></p>
+                                  <p :class="changeClass"> {{evaluate.coding}}<span>点</span></p>
                                 </div>
                                 <div>
                                   <p>プレゼンテーション</p>
-                                  <p> {{evaluate.presentation}}<span>点</span></p>
+                                  <p :class="changeClass"> {{evaluate.presentation}}<span>点</span></p>
                                 </div>
                                 <div>
                                   <p>企画</p>
-                                  <p> {{evaluate.plan}}<span>点</span></p>
+                                  <p :class="changeClass"> {{evaluate.plan}}<span>点</span></p>
                                 </div>
                               </div>
                               <div>
@@ -96,37 +104,78 @@
 </template>
 
 <script>
-import gql from 'graphql-tag';
-
-
-export const allStudents = gql `
-    query allStudents{
-        students {
-            id
-            student_id
-            booth_number
-        }
-    }`;
+import ApexCharts from 'vue-apexcharts'
 
 
 export default {
   name:'AllStudents',
+  components:{
+    apexchart: ApexCharts
+  },
   mounted(){
       this.forceRerender();
+
   },
   data(){
       return{
           componentKey: 0,
-          student_id:this.$store.state.student_id
+          student_id:this.$store.state.student_id,
+          series: [],
+          chartOptions: {
+            chart: {
+              type: 'donut',
+            },
+            dataLabels: {
+              enabled: true,
+              textAnchor:'left',
+            },
+            responsive: [{
+              breakpoint: 480,
+              options: {
+                chart: {
+                  width: 350
+                },
+                legend: {
+                  position: 'bottom'
+                }
+              }
+            }],
+            labels:["デザイン","コーディング","プレゼン","企画"],
+            plotOptions:{
+              pie:{donut:{
+                labels:{
+                  show: true,
+                  value:{
+                    show:true
+                  },
+                  total:{
+                    show: true,
+                    label:'トータル',
+                    }
+                  }
+                }
+              }
+            }
+          }
       }
+  },
+  computed:{
+    changeClass: function(){
+      var theClass = "";
+      if(this.student_id.slice(0,2) == "19"){
+        theClass = "grade_2"
+      }else{
+        theClass = "grade_1"
+      }
+      return theClass
+    }
   },
   methods: {
     forceRerender() {
       this.componentKey += 1;  
     }
+    }
   }
- 
-}
 </script>
 <style scoped>
   .student{
@@ -149,8 +198,7 @@ export default {
   .point-title p:nth-child(2){
     font-size: 20px;
     color: white;
-    background-color: #018FD0;
-    border: 5px solid #05B1FF;
+
     border-radius: 30px;
     padding: 8px;
     margin: 5px 0;
@@ -176,8 +224,7 @@ export default {
   .point-list div p:nth-child(2){
     width: 45px;
     font-size: 40px;
-    background-color:#018FD0;
-    border: 5px solid #05B1FF;
+
     border-radius: 50%;
     margin:10px auto;
     color: white;
@@ -189,4 +236,19 @@ export default {
     text-align: end;
     margin-right: 10px ;
   }
+  .grade_1{
+    background-color: #DD8800;
+    border: 5px solid #FF9D00;
+  }
+  .grade_2{
+    background-color: #018FD0;
+    border: 5px solid #05B1FF;
+  }
+  #chart {
+    text-align: left;
+    width: 350px;
+    margin: 0 auto;
+    
+  }
+  
 </style>

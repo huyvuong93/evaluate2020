@@ -6,6 +6,10 @@ import store from './store'
 import VueApollo from "vue-apollo";
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
 
 
 // create a provider
