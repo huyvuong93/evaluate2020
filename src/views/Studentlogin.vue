@@ -1,6 +1,6 @@
 <template>
     <div class="studentlogin">
-        <img src="~@/assets/LOGO.png">
+        <img src="~@/assets/logo.png">
         <p>日本電子専門学校Webデザイン科</p>
         <h1>卒業・進級制作展</h1>
         <h2>Webデザイン科学生入り口</h2>

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="logo">
-      <img src="~@/assets/LOGO.png" alt="今年の展示会のロゴ">
+      <img src="~@/assets/logo.png" alt="今年の展示会のロゴ">
       <p>日本電子専門学校Webデザイン科</p>
     </div>
     <h1>卒業・進級制作展</h1>
