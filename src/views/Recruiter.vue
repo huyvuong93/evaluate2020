@@ -40,6 +40,9 @@ export default {
 }
 </script>
 <style scoped>
+  .recruiter{
+    padding-top:100px;
+  }
   .nav{
     display: grid;
     grid-template-columns: 1fr 1fr;

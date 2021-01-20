@@ -39,27 +39,24 @@
   }
   .nav{
     margin: 50px auto;
-    width: 200px;
+    width: 300px;
     background-color: #00BAD1;
     border-radius:8px;
     box-shadow: 0 5px #2D929F;
-  }
-  .nav1{
-    padding:30px;
-  }
-  .nav2{
-    padding:20px 30px;
   }
   .nav2 button{
     background-color: transparent;
     border: none;
     color: white;
     font-size: 16px;
-    width: 200px;
+    width: 300px;
+    padding: 20px;
   }
   .nav a{
     text-decoration: none;
-    color:white
+    color:white;
+    display: block;
+    padding: 30px 5px;
   }
   .logo img{
     width: 250px;

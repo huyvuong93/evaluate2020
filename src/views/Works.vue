@@ -8,8 +8,8 @@
     <div class="works-list">
         <div v-for="student in filteredItem" :key="student.id">
             <div v-on:click="chooseWork(student.booth_number,student.id)">
-                <p>{{ student.booth_number }}</p>
-                <p>{{ student.id }}</p>
+                <p>{{ student.booth_number }}.</p>
+                <p>{{ student.work_tittle }}</p>
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@ export default {
 </script>
 <style scoped>
     .works{
-        padding-top: 110px
+        padding-top: 100px
     }
     input{
         width: 333px;
@@ -67,6 +67,7 @@ export default {
         border: solid 5px #03BAD1;
         border-radius: 8px;
         text-align: center;
+        font-size: 17px;
     }
     .grade-button-group{
         display: flex;
@@ -78,7 +79,7 @@ export default {
         padding: 20px 0;
         border: none;
         border-radius: 5px;
-        background-color: transparent;
+        background-color: white;
         box-shadow: 0 5px #E3E3E3;
     }
     .grade-button-group button:nth-child(1):focus{
@@ -94,6 +95,9 @@ export default {
     .works-list{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 5px
+        grid-gap: 5px;
+        text-align: left;
+        width: 90%;
+        margin: 0 auto;
     }
 </style>

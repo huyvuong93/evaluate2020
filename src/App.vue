@@ -15,14 +15,22 @@ export default {
 }
 </script>
 <style lang="scss">
+// @font-face {
+//   font-family: 'nicola';
+//   src: url('fonts/nicoca_v1.ttf');
+// }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
 body{
   margin: 0;
+  background: url('assets/dot-grid.png');
+  background-size:contain;
+  background-position-x: center;
+  background-position-y: center;
 }
 .top-bar{
   position: fixed;

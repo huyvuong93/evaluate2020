@@ -210,7 +210,7 @@ export default {
 </script>
 <style scoped>
     .evaluate{
-        padding-top: 110px
+        padding-top: 100px
     }
     .set-point div:nth-child(2) > input[type=radio]:checked ~ label{
         background: blue;
@@ -231,9 +231,10 @@ export default {
         width: 30px;
         height: 30px;
         cursor: pointer;
-        background-color: green;
+        background-color:white;
+        border: solid 1px #E7E8EA;
         float: right;
-        margin: 0 5px;
+        margin: 0 10px 0 0;
     }
     .set-point div:nth-child(2){
         padding: 20px 0;

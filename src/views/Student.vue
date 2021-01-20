@@ -5,7 +5,7 @@
             query allStudents($student_id:String) {
                 students(where: {student_id: {_eq: $student_id}}) {
                   id
-                  student_id
+                  student_name
                   booth_number
                   evaluation(order_by: {created_at: desc}) {
                     author
@@ -41,7 +41,7 @@
                     <div> 
                         
                         <div v-for="student in data.students" :key="student.id"> 
-                          <h5>{{student.student_id}}</h5>
+                          <h5 :class="changeClass">{{student.student_name}}</h5>
                           <div id="chart">
                             <apexchart type="donut" width="380" :options="chartOptions" 
                             :series="[student.evaluation_aggregate.aggregate.sum.design,
@@ -49,41 +49,23 @@
                             student.evaluation_aggregate.aggregate.sum.presentation,
                             student.evaluation_aggregate.aggregate.sum.plan]"></apexchart>
                           </div>
-                          <div class="point-sum">
-                            <div class="point-title">
-                              <p>デザイン</p>
-                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.design }} <span>点</span></p>
-                            </div>
-                            <div class="point-title">
-                              <p>コーディング</p>
-                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.coding }} <span>点</span></p>
-                            </div>
-                            <div class="point-title">
-                              <p>プレゼンテーション</p>
-                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.presentation }} <span>点</span></p>
-                            </div>
-                            <div class="point-title">
-                              <p>企画</p>
-                              <p :class="changeClass">{{ student.evaluation_aggregate.aggregate.sum.plan }} <span>点</span></p>
-                            </div>
-                          </div>
                           <div class="evaluate-list" v-for="evaluate in student.evaluation" :key="evaluate.id">
                               <div class="point-list">
                                 <div>
                                   <p>デザイン</p>
-                                  <p :class="changeClass"> {{evaluate.design}}<span>点</span></p>
+                                  <p class="evaluate-bg-design"> {{evaluate.design}}<span>点</span></p>
                                 </div>
                                 <div>
                                   <p>コーディング</p>
-                                  <p :class="changeClass"> {{evaluate.coding}}<span>点</span></p>
+                                  <p class="evaluate-bg-coding"> {{evaluate.coding}}<span>点</span></p>
                                 </div>
                                 <div>
                                   <p>プレゼンテーション</p>
-                                  <p :class="changeClass"> {{evaluate.presentation}}<span>点</span></p>
+                                  <p class="evaluate-bg-presentation"> {{evaluate.presentation}}<span>点</span></p>
                                 </div>
                                 <div>
                                   <p>企画</p>
-                                  <p :class="changeClass"> {{evaluate.plan}}<span>点</span></p>
+                                  <p class="evaluate-bg-plan"> {{evaluate.plan}}<span>点</span></p>
                                 </div>
                               </div>
                               <div>
@@ -91,8 +73,9 @@
                               </div>
                               <div class="author">
                                 <p> {{evaluate.author}} </p>
-                              </div>
                                 <p> {{evaluate.created_at}} </p>
+                              </div>
+                                
                           </div>        
                         </div>
                       </div>
@@ -125,6 +108,7 @@ export default {
             chart: {
               type: 'donut',
             },
+            colors: ['#F56582', '#445771', '#FFCC56', '#01B5B2'],
             dataLabels: {
               enabled: true,
               textAnchor:'left',
@@ -179,14 +163,7 @@ export default {
 </script>
 <style scoped>
   .student{
-    padding-top: 110px
-  }
-  .point-sum{
-    margin: 10px auto;
-    width: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap:10px 20px;
+    padding-top: 90px
   }
   .point-title p:nth-child(1){
     font-size: 13px;
@@ -206,9 +183,10 @@ export default {
     font-size: 12px;
   }
   .evaluate-list{
-    width: 300px;
+    width: 90%;
     margin: 20px auto;
     border-radius: 8px ;
+    background-color: white;
     box-shadow: 2px 3px 2px #e3e3e3;
     padding: 5px;
   }
@@ -222,7 +200,7 @@ export default {
     font-weight: bolder;
   }
   .point-list div p:nth-child(2){
-    width: 45px;
+    width: 48px;
     font-size: 40px;
 
     border-radius: 50%;
@@ -232,17 +210,25 @@ export default {
   .point-list div p:nth-child(2) span{
     font-size: 13px
   }
-  .author p{
-    text-align: end;
-    margin-right: 10px ;
+  .author{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
   }
   .grade_1{
     background-color: #DD8800;
-    border: 5px solid #FF9D00;
+    padding: 20px 0;
+    margin-top:0;
+    color: white;
+    font-size: 20px;
   }
   .grade_2{
     background-color: #018FD0;
-    border: 5px solid #05B1FF;
+    padding: 20px 0;
+    margin-top:0;
+    color: white;
+    font-size: 20px;
   }
   #chart {
     text-align: left;
@@ -250,5 +236,17 @@ export default {
     margin: 0 auto;
     
   }
-  
+  .evaluate-bg-design{
+    background-color: #F56582;
+    border: solid 3px #E7E8EA;
+  }.evaluate-bg-coding{
+    background-color: #445771;
+    border: solid 3px #E7E8EA;
+  }.evaluate-bg-presentation{
+    background-color: #FFCC56;
+    border: solid 3px #E7E8EA;
+  }.evaluate-bg-plan{
+    background-color: #01B5B2;
+    border: solid 3px #E7E8EA;
+  }
 </style>
