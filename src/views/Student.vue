@@ -201,6 +201,7 @@ export default {
   }
   .point-list div p:nth-child(2){
     width: 48px;
+    height: 48px;
     font-size: 40px;
 
     border-radius: 50%;
