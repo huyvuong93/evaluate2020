@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex)
 
@@ -9,12 +10,13 @@ export default new Vuex.Store({
     booth_number:'',
     student_id:''
   },
+  plugins: [createPersistedState()],
   mutations: {
     readAuthor(state){
       state.author = JSON.parse(localStorage.author)
     },
-    setWork(state,student){
-      state.booth_number = Number(student.booth_number)
+    setWork(state,payload){
+      state.booth_number = payload.booth_number
     },
     studentLogin(state,payload){
       state.student_id = payload.student_id

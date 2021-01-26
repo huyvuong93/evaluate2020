@@ -49,6 +49,7 @@ export default {
         border-radius: 8px;
         border: none;
         box-shadow: 0 5px #2D929F;
+        font-size: 17px;
     }
     .input-title{
         width: 300px;

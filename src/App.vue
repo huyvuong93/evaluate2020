@@ -15,15 +15,19 @@ export default {
 }
 </script>
 <style lang="scss">
-// @font-face {
-//   font-family: 'nicola';
-//   src: url('fonts/nicoca_v1.ttf');
-// }
+@font-face {
+  font-family: 'nicola';
+  src: url('fonts/nicoca_v1.ttf');
+}
 #app {
-  font-family:'Avenir', Helvetica, Arial, sans-serif;
+  font-family:'nicola','Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+* {
+  box-sizing: border-box;
 }
 body{
   margin: 0;

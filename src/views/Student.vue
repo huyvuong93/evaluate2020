@@ -42,6 +42,7 @@
                         
                         <div v-for="student in data.students" :key="student.id"> 
                           <h5 :class="changeClass">{{student.student_name}}</h5>
+                          <p class="presentation-count">トータル<span>{{ student.evaluation.length }}</span>回プレゼンしました。</p>
                           <div id="chart">
                             <apexchart type="donut" width="380" :options="chartOptions" 
                             :series="[student.evaluation_aggregate.aggregate.sum.design,
@@ -50,6 +51,7 @@
                             student.evaluation_aggregate.aggregate.sum.plan]"></apexchart>
                           </div>
                           <div class="evaluate-list" v-for="evaluate in student.evaluation" :key="evaluate.id">
+                            
                               <div class="point-list">
                                 <div>
                                   <p>デザイン</p>
@@ -163,7 +165,12 @@ export default {
 </script>
 <style scoped>
   .student{
-    padding-top: 90px
+    padding-top: 90px;
+    margin:auto
+  }
+  .presentation-count span{
+    font-size: 40px;
+    color:#018FD0 ;
   }
   .point-title p:nth-child(1){
     font-size: 13px;
@@ -183,7 +190,7 @@ export default {
     font-size: 12px;
   }
   .evaluate-list{
-    width: 90%;
+    max-width: 80%;
     margin: 20px auto;
     border-radius: 8px ;
     background-color: white;
@@ -202,14 +209,14 @@ export default {
   .point-list div p:nth-child(2){
     width: 48px;
     height: 48px;
-    font-size: 40px;
+    font-size: 38px;
 
     border-radius: 50%;
     margin:10px auto;
     color: white;
   }
   .point-list div p:nth-child(2) span{
-    font-size: 13px
+    font-size: 10px
   }
   .author{
     width: 85%;

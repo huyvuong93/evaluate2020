@@ -2,7 +2,7 @@
   <div class="recruiter">
     <h2>職業を選択してください</h2>
       <div class="nav">
-        <button v-on:click="selectOccupation('採用担当者')"><img src="../assets/recruiter.png"><br>採用担当者</button>
+        <button v-on:click="selectOccupation('採用担当者')"><img src="../assets/recruiter.png"><br>営業・採用担当者</button>
         <button v-on:click="selectOccupation('ディレクター')"><img src="../assets/director.png"><br>ディレクター</button>
         <button v-on:click="selectOccupation('エンジニア')"><img src="../assets/engineer.png"><br>エンジニア</button>
         <button v-on:click="selectOccupation('デザイナー')"><img src="../assets/designer.png"><br>デザイナー</button>
@@ -53,7 +53,7 @@ export default {
   .nav button{
     width: 100%;
     padding:10px;
-    background-color: transparent;
+    background-color: white;
     border: none;
     border-radius: 10px;
     box-shadow: 0 5px #E3E3E3;

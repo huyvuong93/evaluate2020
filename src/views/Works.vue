@@ -1,15 +1,21 @@
 <template>
   <div class="works">
-    <input type="text" v-model="search" placeholder="ブース番号をいれてください">
+    <div class="search_box">
+        <img class="search_icon" src="../assets/search_icon.svg" alt="">
+        <input type="text" v-model="search" placeholder="ブース番号をいれてください"> 
+    </div>
     <div class="grade-button-group">
-        <button v-on:click="showGrade = '1' ">1年生</button>
-        <button v-on:click="showGrade = '2' ">2年生</button>
+        <button v-on:click="showGrade = '1' " :class="{active : showGrade === '1'}">1年生</button>
+        <button v-on:click="showGrade = '2' " :class="{active2 : showGrade === '2'}">2年生</button>
     </div>
     <div class="works-list">
         <div v-for="student in filteredItem" :key="student.id">
             <div v-on:click="chooseWork(student.booth_number,student.id)">
                 <p>{{ student.booth_number }}.</p>
-                <p>{{ student.work_tittle }}</p>
+                <img class="worksimg" :src="require('@/assets/work_' + student.booth_number + '.png')">
+                <div class="work-title">
+                    <p>{{ student.work_tittle }}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -20,9 +26,10 @@ import studentDatas from '../assets/students_data.json'
 export default {
     data(){
         return{
+            isActive: false,
             search:'',
             studentDatas:[],
-            showGrade:'1'
+            showGrade:''
         }
     },
     created(){
@@ -41,7 +48,7 @@ export default {
                     return student.grade.includes(this.showGrade = "2")
                 }
             })
-        }
+        },
     },
     methods:{
         chooseWork(booth_number){
@@ -58,39 +65,68 @@ export default {
 }
 </script>
 <style scoped>
+@media screen and (min-width:768px) {
+    p{
+        font-size: 1.4rem;
+    }
+}
     .works{
         padding-top: 100px
     }
     input{
-        width: 333px;
-        padding: 20px 0;
-        border: solid 5px #03BAD1;
-        border-radius: 8px;
+        width:85%;
+        padding: 17px 0;
+        border: none;
         text-align: center;
         font-size: 17px;
     }
+    input:focus{
+        outline: none;
+    }
+    .search_box{
+        width: 90%;
+        margin: auto;
+        display:flex;
+        justify-content: center;
+        border: solid 5px #00B1FF;
+        border-radius: 8px;
+        background: white;
+    }
+    .search_icon{
+        padding: 17px 0;
+    }
     .grade-button-group{
+        width: 90%;
         display: flex;
-        justify-content: space-around;
-        margin: 10px 0;
+        justify-content: space-between;
+        margin: 10px auto;
     }
     .grade-button-group button{
         width: 150px;
         padding: 20px 0;
         border: none;
         border-radius: 5px;
-        background-color: white;
         box-shadow: 0 5px #E3E3E3;
     }
-    .grade-button-group button:nth-child(1):focus{
+    .grade-button-group .active:focus{
         background-color: #FF9D00;
         color: white;
         box-shadow: none;
+        outline: none
     }
-    .grade-button-group button:nth-child(2):focus{
+    .grade-button-group .active2:focus{
         background-color: #00B1FF;
         color: white;
         box-shadow: none;
+        outline: none
+    }
+    .active{
+        background-color:#FF9D00 ;
+        color: white;
+    }
+    .active2{
+        background-color: #00B1FF;
+        color: white;
     }
     .works-list{
         display: grid;
@@ -99,5 +135,16 @@ export default {
         text-align: left;
         width: 90%;
         margin: 0 auto;
+    }
+    .work-title{
+        height: 40px;
+        font-family: 'Hiragino';
+    }
+    .work-title p{
+        margin-top:5px
+    }
+    .worksimg{
+        width: 100%;
+        box-shadow: 3px 3px 5px #CACACA;
     }
 </style>

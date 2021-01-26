@@ -1,19 +1,18 @@
 <template>
   <div class="evaluate">
     <div>
-        <h2></h2>
-        <img src="" alt="">
-        <p>作品名</p>
-        <p>制作者</p>
-        <p>{{ getBoothNumber }}</p>
-        <div v-for="group in studentDatas" :key="group.id">
-            <div v-for="member in group.members" :key="member.id">
-                <p v-if =" group.booth_number == getBoothNumber ">{{member.id}}</p>
+        <h2>{{ getBoothNumber }}.</h2>
+        <img class="worksimg" :src="require('@/assets/work_' + getBoothNumber + '.png')">
+        <div class="work-body" v-for=" group in studentDatas " :key="group.id">
+            <p v-if =" group.booth_number == getBoothNumber ">{{ group.work_tittle }}</p>
+            <div class="members"  v-for=" member in group.members " :key=" member.id ">
+                <img class="member-img" v-if =" group.booth_number == getBoothNumber "  
+                :src="require('@/assets/member_' + member.id + '.png')">
+                <p class="member-name" v-if =" group.booth_number == getBoothNumber ">{{ member.name }}</p>
             </div>
         </div>
     </div>
-    <div>
-        <h2>評価項目</h2>
+    <div class="evaluate-area">
         <div class="set-point">
             <div>
                 <h3>デザイン</h3>
@@ -83,16 +82,16 @@
             </div>
         </div>
         <div>
-            <h3>ご意見がございましたら、<br>よろしくお願いいたします。</h3>
+            <p class="hiragino-font">その他何かありましたらコメントお願いいたします。</p>
             <textarea name="comment" id="comment" cols="25" rows="4" v-model="comment"></textarea>
         </div>
-        <button v-on:click="addEvaluation()">評価する</button>
+        <button v-on:click="addEvaluation()">送信</button>
     </div>
     <transition name="modal">
       <div v-if="isOpen">
         <div class="overlay">
           <div class="modal">
-            <p>ありがとうございました！</p>
+            <p>ご評価ありがとうございました！</p>
             <img src="../assets/thanks.png" alt="">
             <router-link to="/works">一覧へ戻る</router-link>
           </div>
@@ -142,7 +141,7 @@ export default {
     data(){
         return{
             isOpen:false,
-            booth_number: this.$store.getters.getBoothNumber,
+            booth_number: Number(this.$store.getters.getBoothNumber),
             author: this.$store.getters.getAuthorData,
             design:'',
             coding:'',
@@ -209,8 +208,20 @@ export default {
 }
 </script>
 <style scoped>
+    @media screen and (min-width:768px) {
+        button{
+            width: 300px;
+        }
+    }
     .evaluate{
+        max-width: 80%;
+        margin:auto;
         padding-top: 100px
+    }
+    h2{
+        text-align: left;
+        width: 80vw;
+        margin: auto;
     }
     .set-point div:nth-child(2) > input[type=radio]:checked ~ label{
         background: blue;
@@ -221,11 +232,16 @@ export default {
     .set-point input{
         display: none;
     }
+    .evaluate-area{
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 80vw;
+        min-width: 260px;
+    }
     .set-point {
         margin: 0 auto;
-        width: 300px;
         display: grid;
-        grid-template-columns: 1fr 2.5fr;
+        grid-template-columns: 0.7fr 2.5fr;
     }
     .set-point label{
         width: 30px;
@@ -294,18 +310,53 @@ export default {
         transition: opacity 0.2s ease;
     }
     #comment{
+        width: 80vw;
         border: solid 5px  #03BAD1;
         border-radius:8px;
         font-size: 20px;
         padding: 5px;
     }
+    textarea:focus{
+        outline: none;
+    }
     button{
+        width: 80vw;
         background-color: #03BAD1;
         border: none;
         border-radius: 8px;
         box-shadow: 0 5px #2D929F;
+        font-size: 17px;
         margin: 20px auto;
         padding: 20px 118px;
         color: white;
+    }
+    .worksimg{
+        width: 80vw;
+        box-shadow: 3px 3px 5px #CACACA;
+    }
+    .work-body{
+        width: 80vw;
+        text-align: left;
+        margin: auto;
+        font-size: 20px;
+    }
+    .member-img{
+        width: 70px;
+        margin-right:10px ;
+    }
+    .members{
+        float: left;
+    }
+    .members p{
+        width: 70px;
+        margin: 0;
+        font-size: 13px;
+        text-align: center;
+    }
+    .hiragino-font{
+        text-align:left;
+        width:80vw;
+        margin:10px auto;
+        font-family:'Hiragino'
     }
 </style>

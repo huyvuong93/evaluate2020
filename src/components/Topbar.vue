@@ -13,11 +13,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   img{
-    width: 80px;
-    padding:10px 0;
+    width: 108px;
+    padding: 6px 0;
   }
   .top-bar{
     width: 100%;
+    height: 80px;
     box-shadow:0 5px #E3E3E3;
     background-color: white;
   }
