@@ -15,70 +15,96 @@
     <div class="evaluate-area">
         <div class="set-point">
             <div>
-                <h3>デザイン</h3>
+                <h3 class="point-title">デザイン</h3>
             </div>
-            <div>
-                <input type="radio" id="design-5" value="5" v-model="design">
-                <label for="design-5"></label>  
-                <input type="radio" id="design-4" value="4" v-model="design">
-                <label for="design-4"></label>  
-                <input type="radio" id="design-3" value="3" v-model="design">
-                <label for="design-3"></label> 
-                <input type="radio" id="design-2" value="2" v-model="design">
-                <label for="design-2"></label> 
-                <input type="radio" id="design-1" value="1" v-model="design">
-                <label for="design-1"></label>
-            </div>
-        </div>
-        <div class="set-point">
-            <div>
-                <h3>実装</h3>
-            </div>
-            <div>
-                <input type="radio" id="coding-5" value="5" v-model="coding">
-                <label for="coding-5"></label>
-                <input type="radio" id="coding-4" value="4" v-model="coding">
-                <label for="coding-4"></label>
-                <input type="radio" id="coding-3" value="3" v-model="coding">
-                <label for="coding-3"></label>
-                <input type="radio" id="coding-2" value="2" v-model="coding">
-                <label for="coding-2"></label>
-                <input type="radio" id="coding-1" value="1" v-model="coding">
-                <label for="coding-1"></label>
+            <div class="check pink">
+                
+                    <input type="radio" checked class="toggle_option" id="design-1" value="1" v-model="design">           
+                    <input type="radio" class="toggle_option" id="design-2" value="2" v-model="design">                 
+                    <input type="radio" class="toggle_option" id="design-3" value="3" v-model="design">               
+                    <input type="radio" class="toggle_option" id="design-4" value="4" v-model="design">                
+                    <input type="radio" class="toggle_option" id="design-5" value="5" v-model="design">            
+                    <label for="design-1" style="background:#FFCAD1"></label>
+                    <label for="design-2" style="background:#FCB2BD"></label>
+                    <label for="design-3" style="background:#FA97A9"></label>
+                    <label for="design-4" style="background:#F77E95"></label>  
+                    <label for="design-5" style="background:#F56884"></label>
+                    <div class="toggle_option_slider">
+                        <div class="heart">
+                            <img src="../assets/pink.png" style="width:100%">
+                            <span>{{design}}</span>
+                        </div>
+                    </div>
+    
             </div>
         </div>
         <div class="set-point">
             <div>
-                <h3>プレゼン</h3>
+                <h3 class="point-title">実装</h3>
             </div>
-            <div>
-                <input type="radio" id="presentation-5" value="5" v-model="presentation">
-                <label for="presentation-5"></label>
-                <input type="radio" id="presentation-4" value="4" v-model="presentation">
-                <label for="presentation-4"></label>
-                <input type="radio" id="presentation-3" value="3" v-model="presentation">
-                <label for="presentation-3"></label>
-                <input type="radio" id="presentation-2" value="2" v-model="presentation">
-                <label for="presentation-2"></label>
-                <input type="radio" id="presentation-1" value="1" v-model="presentation">
-                <label for="presentation-1"></label>
+            <div class="check blue">
+                <input type="radio" checked class="toggle_option" id="coding-1" value="1" v-model="coding">           
+                <input type="radio" class="toggle_option" id="coding-2" value="2" v-model="coding">                 
+                <input type="radio" class="toggle_option" id="coding-3" value="3" v-model="coding">               
+                <input type="radio" class="toggle_option" id="coding-4" value="4" v-model="coding">                
+                <input type="radio" class="toggle_option" id="coding-5" value="5" v-model="coding">            
+                <label for="coding-1" style="background:#98C1FA"></label>
+                <label for="coding-2" style="background:#82A6D7"></label>
+                <label for="coding-3" style="background:#6E8CB6"></label>
+                <label for="coding-4" style="background:#587192"></label>  
+                <label for="coding-5" style="background:#445771"></label>
+                <div class="toggle_option_slider">
+                    <div class="heart">
+                        <img src="../assets/blue.png" style="width:100%">
+                        <span>{{coding}}</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="set-point">
             <div>
-                <h3>企画</h3>
+                <h3 class="point-title">プレゼン</h3>
             </div>
+            <div class="check yellow">
+                <input type="radio" checked class="toggle_option" id="presentation-1" value="1" v-model="presentation">           
+                <input type="radio" class="toggle_option" id="presentation-2" value="2" v-model="presentation">                 
+                <input type="radio" class="toggle_option" id="presentation-3" value="3" v-model="presentation">               
+                <input type="radio" class="toggle_option" id="presentation-4" value="4" v-model="presentation">                
+                <input type="radio" class="toggle_option" id="presentation-5" value="5" v-model="presentation">            
+                <label for="presentation-1" style="background:#FFEFCA"></label>
+                <label for="presentation-2" style="background:#FDE5AD"></label>
+                <label for="presentation-3" style="background:#FCDB90"></label>
+                <label for="presentation-4" style="background:#FAD071"></label>  
+                <label for="presentation-5" style="background:#FFCC56"></label>
+                <div class="toggle_option_slider">
+                    <div class="heart">
+                        <img src="../assets/yellow.png" style="width:100%">
+                        <span>{{presentation}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="set-point">
             <div>
-                <input type="radio" id="plan-5" value="5" v-model="plan">
-                <label for="plan-5"></label>
-                <input type="radio" id="plan-4" value="4" v-model="plan">
-                <label for="plan-4"></label>
-                <input type="radio" id="plan-3" value="3" v-model="plan">
-                <label for="plan-3"></label>
-                <input type="radio" id="plan-2" value="2" v-model="plan">
-                <label for="plan-2"></label>
-                <input type="radio" id="plan-1" value="1" v-model="plan">
-                <label for="plan-1"></label>
+                <h3 class="point-title">企画</h3>
+            </div>
+            <div class="check green">
+                <input type="radio" checked class="toggle_option" id="plan-1" value="1" v-model="plan">           
+                <input type="radio" class="toggle_option" id="plan-2" value="2" v-model="plan">                 
+                <input type="radio" class="toggle_option" id="plan-3" value="3" v-model="plan">               
+                <input type="radio" class="toggle_option" id="plan-4" value="4" v-model="plan">                
+                <input type="radio" class="toggle_option" id="plan-5" value="5" v-model="plan">            
+                <label for="plan-1" style="background:#B3C6C6"></label>
+                <label for="plan-2" style="background:#88C0C0"></label>
+                <label for="plan-3" style="background:#5CBBB9"></label>
+                <label for="plan-4" style="background:#2EB5B2"></label>  
+                <label for="plan-5" style="background:#02B6B3"></label>
+                <div class="toggle_option_slider">
+                    <div class="heart">
+                        <img src="../assets/green.png" style="width:100%">
+                        <span>{{plan}}</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div>
@@ -93,7 +119,7 @@
           <div class="modal">
             <p>ご評価ありがとうございました！</p>
             <img src="../assets/thanks.png" alt="">
-            <router-link to="/works">一覧へ戻る</router-link>
+            <router-link class="hiragino-font" to="/works">一覧へ戻る</router-link>
           </div>
         </div>
       </div>
@@ -143,10 +169,10 @@ export default {
             isOpen:false,
             booth_number: Number(this.$store.getters.getBoothNumber),
             author: this.$store.getters.getAuthorData,
-            design:'',
-            coding:'',
-            presentation:'',
-            plan:'',
+            design:'1',
+            coding:'1',
+            presentation:'1',
+            plan:'1',
             comment:'',
             studentDatas: []
         }
@@ -208,23 +234,70 @@ export default {
 }
 </script>
 <style scoped>
-    @media screen and (min-width:768px) {
-        button{
-            width: 300px;
-        }
-    }
-    .evaluate{
-        max-width: 80%;
-        margin:auto;
-        padding-top: 100px
-    }
     h2{
         text-align: left;
-        width: 80vw;
-        margin: auto;
+        margin-top: 0;
     }
-    .set-point div:nth-child(2) > input[type=radio]:checked ~ label{
-        background: blue;
+    .evaluate-area{
+        display: inline-block;
+        margin: 0 auto;
+        width: 700px;
+    }
+    #comment{
+        width: 100%;
+        border: solid 5px  #03BAD1;
+        border-radius:8px;
+        font-size: 20px;
+        padding: 5px;
+    }
+    textarea:focus{
+        outline: none;
+    }
+    button{
+        width: 100%;
+        background-color: #03BAD1;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px #2D929F;
+        font-size: 17px;
+        margin: 20px auto;
+        padding: 20px 118px;
+        color: white;
+    }
+    .worksimg{
+        width: 100%;
+        box-shadow: 3px 3px 5px #CACACA;
+    }
+    .work-body{
+        width: 100%;
+        text-align: left;
+        margin: auto;
+        font-size: 20px;
+    }
+    .member-img{
+        width: 70px;
+        margin-right:10px ;
+    }
+    .members{
+        float: left;
+    }
+    .members p{
+        width: 70px;
+        margin: 0;
+        font-size: 13px;
+        text-align: center;
+    }
+    .hiragino-font{
+        text-align:left;
+        width:100%;
+        margin:10px 0;
+        font-family:'Hiragino'
+    }
+
+    .evaluate{
+        max-width: 700px;
+        padding-top: 100px;
+        margin: auto;
     }
     .set-point div:nth-child(1) h3{
         text-align: left;
@@ -232,25 +305,17 @@ export default {
     .set-point input{
         display: none;
     }
-    .evaluate-area{
-        display: inline-block;
-        margin: 0 auto;
-        max-width: 80vw;
-        min-width: 260px;
-    }
     .set-point {
         margin: 0 auto;
+        min-width: 300px;
         display: grid;
-        grid-template-columns: 0.7fr 2.5fr;
+        grid-template-columns: 30% 70%;
     }
     .set-point label{
         width: 30px;
         height: 30px;
+        border-radius: 50%;
         cursor: pointer;
-        background-color:white;
-        border: solid 1px #E7E8EA;
-        float: right;
-        margin: 0 10px 0 0;
     }
     .set-point div:nth-child(2){
         padding: 20px 0;
@@ -310,53 +375,180 @@ export default {
         transition: opacity 0.2s ease;
     }
     #comment{
-        width: 80vw;
         border: solid 5px  #03BAD1;
         border-radius:8px;
         font-size: 20px;
         padding: 5px;
     }
-    textarea:focus{
-        outline: none;
-    }
     button{
-        width: 80vw;
         background-color: #03BAD1;
         border: none;
         border-radius: 8px;
         box-shadow: 0 5px #2D929F;
-        font-size: 17px;
         margin: 20px auto;
         padding: 20px 118px;
         color: white;
     }
-    .worksimg{
-        width: 80vw;
-        box-shadow: 3px 3px 5px #CACACA;
+    .check{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
     }
-    .work-body{
-        width: 80vw;
-        text-align: left;
-        margin: auto;
-        font-size: 20px;
+    .check::before{
+        width: calc(100% * (4.5 / 5));
+        content: " ";
+        position: absolute;
+        height: 5px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
     }
-    .member-img{
-        width: 70px;
-        margin-right:10px ;
+    .pink::before{
+        background: rgb(255,203,209);
+        background: linear-gradient(90deg, rgba(255,203,209,1) 0%, rgba(245,101,130,1) 100%);
     }
-    .members{
-        float: left;
+    .blue::before{
+        background: rgb(147,187,242);
+        background: linear-gradient(90deg, rgba(147,187,242,1) 0%, rgba(68,87,113,1) 100%);
     }
-    .members p{
-        width: 70px;
-        margin: 0;
-        font-size: 13px;
-        text-align: center;
+    .yellow::before{
+        background: rgb(254,232,183);
+        background: linear-gradient(90deg, rgba(254,232,183,1) 0%, rgba(249,199,84,1) 100%);
     }
-    .hiragino-font{
-        text-align:left;
-        width:80vw;
-        margin:10px auto;
-        font-family:'Hiragino'
+    .green::before{
+        background: rgb(164,196,196);
+        background: linear-gradient(90deg, rgba(164,196,196,1) 0%, rgba(2,175,172,1) 100%);
+    }
+    .toggle_option_slider{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 20%;
+        left: -2%;
+        -webkit-transition: all .4s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        -ms-transition: all .4s ease;
+        transition: all .4s ease;
+        z-index: 3;
+    }
+    .heart{
+        position: relative;
+    }
+    .toggle_option_slider span{
+        position: absolute;
+        display: block;
+        top:3px;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        color: white;
+    }
+    .point-title{
+        font-family: 'Hiragino';
+        font-size: 12px;
+        padding:10px 0
+    }
+    #coding-1:checked ~ .toggle_option_slider,
+    #design-1:checked ~ .toggle_option_slider,
+    #presentation-1:checked ~ .toggle_option_slider,
+    #plan-1:checked ~ .toggle_option_slider{
+        left: -2%;
+    }
+    #coding-2:checked ~ .toggle_option_slider,
+    #design-2:checked ~ .toggle_option_slider,
+    #presentation-2:checked ~ .toggle_option_slider,
+    #plan-2:checked ~ .toggle_option_slider{
+        left: 22%;
+    }
+    #coding-3:checked ~ .toggle_option_slider,
+    #design-3:checked ~ .toggle_option_slider,
+    #presentation-3:checked ~ .toggle_option_slider,
+    #plan-3:checked ~ .toggle_option_slider{
+        left: 45%;
+    }
+    #coding-4:checked ~ .toggle_option_slider,
+    #design-4:checked ~ .toggle_option_slider,
+    #presentation-4:checked ~ .toggle_option_slider,
+    #plan-4:checked ~ .toggle_option_slider{
+        left: 68%;
+    }
+    #coding-5:checked ~ .toggle_option_slider,
+    #design-5:checked ~ .toggle_option_slider,
+    #presentation-5:checked ~ .toggle_option_slider,
+    #plan-5:checked ~ .toggle_option_slider{
+        left: 92%;
+    }
+    @media screen and (max-width:767px) {
+        .evaluate{
+            max-width: 300px;
+            margin: auto;
+        }
+        .set-point {
+            margin: 0 auto;
+            max-width: 300px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+        .toggle_option_slider{
+            width: 30px;
+            height: 30px;
+            left: 3px;
+            top:27%
+        }
+        .set-point label{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .toggle_option_slider span{
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+        }
+        #coding-1:checked ~ .toggle_option_slider,
+        #design-1:checked ~ .toggle_option_slider,
+        #presentation-1:checked ~ .toggle_option_slider,
+        #plan-1:checked ~ .toggle_option_slider{
+            left: -4px;
+        }
+        #coding-2:checked ~ .toggle_option_slider,
+        #design-2:checked ~ .toggle_option_slider,
+        #presentation-2:checked ~ .toggle_option_slider,
+        #plan-2:checked ~ .toggle_option_slider{
+            left: 47px;
+        }
+        #coding-3:checked ~ .toggle_option_slider,
+        #design-3:checked ~ .toggle_option_slider,
+        #presentation-3:checked ~ .toggle_option_slider,
+        #plan-3:checked ~ .toggle_option_slider{
+            left: 97px;
+        }
+        #coding-4:checked ~ .toggle_option_slider,
+        #design-4:checked ~ .toggle_option_slider,
+        #presentation-4:checked ~ .toggle_option_slider,
+        #plan-4:checked ~ .toggle_option_slider{
+            left: 150px;
+        }
+        #coding-5:checked ~ .toggle_option_slider,
+        #design-5:checked ~ .toggle_option_slider,
+        #presentation-5:checked ~ .toggle_option_slider,
+        #plan-5:checked ~ .toggle_option_slider{
+            left: 200px;
+        }
+        .evaluate-area{
+            width: 300px;
+        }
+        .worksimg{
+            width: 300px;
+        }
+        #comment{
+            width: 300px;
+        }
+        button{
+            width: 300px;
+        }
     }
 </style>

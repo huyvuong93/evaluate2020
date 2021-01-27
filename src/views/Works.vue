@@ -139,6 +139,7 @@ export default {
     .work-title{
         height: 40px;
         font-family: 'Hiragino';
+        font-size: 13px;
     }
     .work-title p{
         margin-top:5px
