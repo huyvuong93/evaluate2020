@@ -5,8 +5,12 @@
         <input type="text" v-model="search" placeholder="ブース番号をいれてください"> 
     </div>
     <div class="grade-button-group">
-        <button v-on:click="showGrade = '1' " :class="{active : showGrade === '1'}">1年生</button>
-        <button v-on:click="showGrade = '2' " :class="{active2 : showGrade === '2'}">2年生</button>
+        <div class="btn-bg">
+            <button v-on:click="showGrade = '1' " :class="{active : showGrade === '1'}">1年生</button>
+        </div>
+        <div class="btn-bg">
+            <button v-on:click="showGrade = '2' " :class="{active2 : showGrade === '2'}">2年生</button>
+        </div>
     </div>
     <div class="works-list">
         <div v-for="student in filteredItem" :key="student.id">
@@ -101,12 +105,16 @@ export default {
         justify-content: space-between;
         margin: 10px auto;
     }
+    .btn-bg{
+        background-color: white;
+    }
     .grade-button-group button{
         width: 150px;
         padding: 20px 0;
         border: none;
         border-radius: 5px;
         box-shadow: 0 5px #E3E3E3;
+        outline: none;
     }
     .grade-button-group .active:focus{
         background-color: #FF9D00;
@@ -138,7 +146,7 @@ export default {
     }
     .work-title{
         height: 40px;
-        font-family: 'Hiragino';
+        font-family: 'Hiragino',sans-serif;
         font-size: 13px;
     }
     .work-title p{

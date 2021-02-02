@@ -32,9 +32,8 @@ export default {
 body{
   margin: 0;
   background: url('assets/dot-grid.png');
-  background-size:contain;
+  background-size:100%;
   background-position-x: center;
-  background-position-y: center;
 }
 .top-bar{
   position: fixed;

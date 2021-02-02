@@ -41,14 +41,21 @@
                     <div> 
                         
                         <div v-for="student in data.students" :key="student.id"> 
-                          <h5 :class="changeClass">{{student.student_name}}</h5>
-                          <p class="presentation-count">トータル<span>{{ student.evaluation.length }}</span>回プレゼンしました。</p>
-                          <div id="chart">
+                          <h5 :class="changeClass" style="font-family:'Hiragino,san-serif'">{{student.student_name}}</h5>
+                          <p class="presentation-count">トータル<span :class="changeClass">{{ student.evaluation.length }}</span>回プレゼンしました。</p>
+                          <div v-if="student.evaluation_aggregate.aggregate.sum.design === null">
+                            プレゼンを頑張ってください！
+                          </div>
+                          <div v-else id="chart">
                             <apexchart type="donut" width="380" :options="chartOptions" 
                             :series="[student.evaluation_aggregate.aggregate.sum.design,
                             student.evaluation_aggregate.aggregate.sum.coding,
                             student.evaluation_aggregate.aggregate.sum.presentation,
                             student.evaluation_aggregate.aggregate.sum.plan]"></apexchart>
+                          </div>
+                          <div class="avatar">
+                            <img src="../assets/tree.png">
+                            <img :src="require('@/assets/avatar_' + student_id + '.svg')">
                           </div>
                           <div class="evaluate-list" v-for="evaluate in student.evaluation" :key="evaluate.id">
                             
@@ -70,12 +77,12 @@
                                   <p class="evaluate-bg-plan"> {{evaluate.plan}}<span>点</span></p>
                                 </div>
                               </div>
-                              <div>
-                                <p> {{evaluate.comment}} </p>
+                              <div class="comment">
+                                <p class="hiragino-font" style="word-break:break-all"> {{evaluate.comment}} </p>
                               </div>
                               <div class="author">
-                                <p> {{evaluate.author}} </p>
-                                <p> {{evaluate.created_at}} </p>
+                                <p class="hiragino-font"> {{evaluate.author}} </p>
+                                <p class="hiragino-font"> {{evaluate.created_at}} </p>
                               </div>
                                 
                           </div>        
@@ -136,7 +143,7 @@ export default {
                   },
                   total:{
                     show: true,
-                    label:'トータル',
+                    label:'総合',
                     }
                   }
                 }
@@ -168,9 +175,15 @@ export default {
     padding-top: 90px;
     margin:auto
   }
-  .presentation-count span{
-    font-size: 40px;
+  .presentation-count .grade_2{
+    font-size: 50px;
     color:#018FD0 ;
+    background-color: transparent;
+  }
+  .presentation-count .grade_1{
+    font-size: 50px;
+    color:#DD8800 ;
+    background-color: transparent;
   }
   .point-title p:nth-child(1){
     font-size: 13px;
@@ -207,8 +220,8 @@ export default {
     font-weight: bolder;
   }
   .point-list div p:nth-child(2){
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     font-size: 38px;
 
     border-radius: 50%;
@@ -244,6 +257,21 @@ export default {
     margin: 0 auto;
     
   }
+  .avatar{
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .avatar img:nth-child(1){
+      width: 60px;
+  }
+  .avatar img:nth-child(2){
+      width: 35px;
+    }
+  .hiragino-font{
+    font-family: 'Hiragino',sans-serif;
+  }
   .evaluate-bg-design{
     background-color: #F56582;
     border: solid 3px #E7E8EA;
@@ -256,5 +284,9 @@ export default {
   }.evaluate-bg-plan{
     background-color: #01B5B2;
     border: solid 3px #E7E8EA;
+  }
+  .comment{
+    width: 85%;
+    margin: auto;
   }
 </style>

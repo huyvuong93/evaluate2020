@@ -396,9 +396,9 @@
     },
     {
         "booth_number":"43",
-        "id":"20aw0129",
+        "id":"20aw0115",
         "members":[
-            {"id":"20aw0129","name":"ナパック ナンタパッチム"}
+            {"id":"20aw0115","name":"國井 美優"}
         ],
         "grade":"1",
         "work_tittle":"ジャンゴフィルム"
@@ -414,9 +414,9 @@
     },
     {
         "booth_number":"45",
-        "id":"20aw0115",
+        "id":"20aw0129",
         "members":[
-            {"id":"20aw0115","name":"國井 美優"}
+            {"id":"20aw0129","name":"ナパック ナンタパッチム"}
         ],
         "grade":"1",
         "work_tittle":"ジャンゴフィルム"
@@ -467,18 +467,9 @@
         ],
         "grade":"1",
         "work_tittle":"ギフトリエ"
-    },
+    },   
     {
         "booth_number":"51",
-        "id":"20aw0124",
-        "members":[
-            {"id":"20aw0124","name":"髙目 竜也"}
-        ],
-        "grade":"1",
-        "work_tittle":"ギフトリエ"
-    },
-    {
-        "booth_number":"52",
         "id":"20aw0118",
         "members":[
             {"id":"20aw0118","name":"佐々木 友花"}
@@ -487,10 +478,19 @@
         "work_tittle":"ギフトリエ"
     },
     {
-        "booth_number":"53",
+        "booth_number":"52",
         "id":"20aw0122",
         "members":[
             {"id":"20aw0122","name":"鈴木 大翔"}
+        ],
+        "grade":"1",
+        "work_tittle":"ギフトリエ"
+    },
+    {
+        "booth_number":"53",
+        "id":"20aw0124",
+        "members":[
+            {"id":"20aw0124","name":"髙目 竜也"}
         ],
         "grade":"1",
         "work_tittle":"ギフトリエ"
@@ -513,6 +513,8 @@
         "grade":"1",
         "work_tittle":"ギフトリエ"
     },
+
+    
     {
         "booth_number":"56",
         "id":"20aw0132",

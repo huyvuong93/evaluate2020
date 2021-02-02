@@ -38,6 +38,7 @@ export default {
         border: solid 3px #03BAD1;
         text-align: center;
         font-size:20px ;
+        outline: none;
     }
     button{
         display: block;
@@ -50,6 +51,7 @@ export default {
         border: none;
         box-shadow: 0 5px #2D929F;
         font-size: 17px;
+        outline: none;
     }
     .input-title{
         width: 300px;

@@ -119,7 +119,7 @@
           <div class="modal">
             <p>ご評価ありがとうございました！</p>
             <img src="../assets/thanks.png" alt="">
-            <router-link class="hiragino-font" to="/works">一覧へ戻る</router-link>
+            <router-link class="back-to-works" to="/works">一覧へ戻る</router-link>
           </div>
         </div>
       </div>
@@ -324,7 +324,7 @@ export default {
         display: block;
     }
     .modal {
-        width: 80vw;
+        width: 75vw;
         margin: 0px auto;
         padding: 20px;
         background-color: #fff;
@@ -347,6 +347,9 @@ export default {
         box-shadow: 0 5px #2D929F;
         text-decoration: none;
         color: white;
+    }
+    .back-to-works{
+        font-family: 'Hiragino';
     }
     .fadeIn-enter {
         opacity: 0;
