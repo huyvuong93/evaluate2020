@@ -324,7 +324,7 @@ export default {
         display: block;
     }
     .modal {
-        width: 75vw;
+        width: 80vw;
         margin: 0px auto;
         padding: 20px;
         background-color: #fff;
@@ -336,7 +336,7 @@ export default {
         font-weight:bold ;
     }
     .modal img{
-        width: 200px;
+        width: 250px;
     }
     .modal a{
         display: block;

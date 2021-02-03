@@ -18,7 +18,12 @@
                 <p>{{ student.booth_number }}.</p>
                 <img class="worksimg" :src="require('@/assets/work_' + student.booth_number + '.png')">
                 <div class="work-title">
-                    <p>{{ student.work_tittle }}</p>
+                    <div>{{ student.work_tittle }}</div>
+                </div>
+                <div style="display:flex;justify-content:left">
+                    <div v-for="member in student.members" :key="member.id" >
+                        <div style="margin-right:5px;margin-top:5px;font-size:10px;font-family:'Hiragino,san-serif'">{{member.name}}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,12 +150,14 @@ export default {
         margin: 0 auto;
     }
     .work-title{
-        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
         font-family: 'Hiragino',sans-serif;
-        font-size: 13px;
-    }
-    .work-title p{
-        margin-top:5px
+        font-size: 10px;
+        font-weight:bold
     }
     .worksimg{
         width: 100%;

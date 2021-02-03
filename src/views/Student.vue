@@ -47,7 +47,7 @@
                             プレゼンを頑張ってください！
                           </div>
                           <div v-else id="chart">
-                            <apexchart type="donut" width="380" :options="chartOptions" 
+                            <apexchart type="donut" width="500px" :options="chartOptions" 
                             :series="[student.evaluation_aggregate.aggregate.sum.design,
                             student.evaluation_aggregate.aggregate.sum.coding,
                             student.evaluation_aggregate.aggregate.sum.presentation,
@@ -120,16 +120,25 @@ export default {
             colors: ['#F56582', '#445771', '#FFCC56', '#01B5B2'],
             dataLabels: {
               enabled: true,
+              name:{
+                show:false
+              },
               textAnchor:'left',
+            },
+            stroke:{
+              show:false
+            },
+            legend:{
+              fontSize:'10px'
             },
             responsive: [{
               breakpoint: 480,
               options: {
                 chart: {
-                  width: 350
+                  width: "100%"
                 },
                 legend: {
-                  position: 'bottom'
+                  position: 'bottom',
                 }
               }
             }],
@@ -139,7 +148,7 @@ export default {
                 labels:{
                   show: true,
                   value:{
-                    show:true
+                    show:true,
                   },
                   total:{
                     show: true,
@@ -171,6 +180,11 @@ export default {
   }
 </script>
 <style scoped>
+@media screen and (min-width:700px) {
+  #chart{
+    width: 500px;
+  }
+}
   .student{
     padding-top: 90px;
     margin:auto
@@ -253,9 +267,7 @@ export default {
   }
   #chart {
     text-align: left;
-    width: 350px;
-    margin: 0 auto;
-    
+    margin: 0 auto;  
   }
   .avatar{
     width: 80vw;
