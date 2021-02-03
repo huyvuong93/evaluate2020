@@ -74,13 +74,22 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (min-width:768px) {
-    p{
-        font-size: 1.4rem;
+@media screen and (min-width:768px){
+    .search_box{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .grade-button-group{
+        width: 100%;
+        margin: 10px auto
+    }
+    .works,.works-list{
+        width: 700px;
+        margin: auto;
     }
 }
     .works{
-        padding-top: 100px
+        padding-top: 100px;
     }
     input{
         width:85%;
@@ -114,7 +123,7 @@ export default {
         background-color: white;
     }
     .grade-button-group button{
-        width: 150px;
+        width: 130px;
         padding: 20px 0;
         border: none;
         border-radius: 5px;
