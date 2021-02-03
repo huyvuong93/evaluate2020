@@ -271,6 +271,7 @@ export default {
   }
   .avatar{
     width: 80vw;
+    height: 80px;
     margin: auto;
     display: flex;
     justify-content: space-between;
