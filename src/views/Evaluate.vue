@@ -8,7 +8,8 @@
             <div class="members"  v-for=" member in group.members " :key=" member.id ">
                 <img class="member-img" v-if =" group.booth_number == getBoothNumber "  
                 :src="require('@/assets/member_' + member.id + '.png')">
-                <p class="member-name" v-if =" group.booth_number == getBoothNumber ">{{ member.name }}</p>
+                <p class="member-name" v-if =" group.booth_number == getBoothNumber "
+                style="font-family:'Hiragino,san-serif'">{{ member.name }}</p>
             </div>
         </div>
     </div>

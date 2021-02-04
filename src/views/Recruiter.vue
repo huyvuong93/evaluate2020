@@ -40,6 +40,12 @@ export default {
 }
 </script>
 <style scoped>
+@media screen and (min-width:700px) {
+  .recruiter{
+    max-width: 500px;
+    margin: auto;
+  }
+}
   .recruiter{
     padding-top:100px;
   }

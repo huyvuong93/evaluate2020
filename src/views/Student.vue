@@ -112,7 +112,19 @@ export default {
       return{
           componentKey: 0,
           student_id:this.$store.state.student_id,
-          series: [],
+          series: [{
+            name:"デザイン",
+            data:''
+          },{
+            name:"コーディング",
+            data:''
+          },{
+            name:"プレゼン",
+            data:''
+          },{
+            name:"企画",
+            data:''
+          }],
           chartOptions: {
             chart: {
               type: 'donut',
@@ -120,39 +132,60 @@ export default {
             colors: ['#F56582', '#445771', '#FFCC56', '#01B5B2'],
             dataLabels: {
               enabled: true,
-              name:{
-                show:false
+              formatter: function (val, opts) {
+                const name = opts.w.globals.labels[opts.seriesIndex]
+                return [name,opts.w.config.series[opts.seriesIndex]]
               },
-              textAnchor:'left',
+              style: {
+                fontSize: '20px',
+                fontFamily: 'nicola',
+                fontWeight: 'bold',
+              },
+              dropShadow:{
+                enabled:false,
+              },
             },
             stroke:{
               show:false
             },
             legend:{
-              fontSize:'10px'
+              show:false
             },
             responsive: [{
               breakpoint: 480,
               options: {
                 chart: {
                   width: "100%"
-                },
-                legend: {
-                  position: 'bottom',
                 }
               }
             }],
             labels:["デザイン","コーディング","プレゼン","企画"],
             plotOptions:{
-              pie:{donut:{
-                labels:{
+              pie:{
+                expandOnClick: false,
+                donut:{
+                  size:'38%',
+                  background:'#E7E8EA',
+                  labels:{
                   show: true,
+                  name:{
+                    show:true,
+                    color: '#373d3f'
+                    },
                   value:{
                     show:true,
+                    fontSize: '30px',
+                    fontFamily: 'nicola',
+                    color: '#373d3f',
+                    fontWeight: 'bold'
                   },
                   total:{
                     show: true,
                     label:'総合',
+                    fontSize: '18px',
+                    fontFamily: 'nicola',
+                    fontWeight: 600,
+                    color: '#373d3f',
                     }
                   }
                 }
