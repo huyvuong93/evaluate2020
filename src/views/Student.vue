@@ -41,7 +41,7 @@
                     <div> 
                         
                         <div v-for="student in data.students" :key="student.id"> 
-                          <h5 :class="changeClass" style="font-family:'Hiragino,san-serif'">{{student.student_name}}</h5>
+                          <div :class="changeClass" style="font-family:'Hiragino,san-serif';font-weight:bold">{{student.student_name}}</div>
                           <p class="presentation-count">トータル<span :class="changeClass">{{ student.evaluation.length }}</span>回プレゼンしました。</p>
                           <div v-if="student.evaluation_aggregate.aggregate.sum.design === null">
                             プレゼンを頑張ってください！
@@ -270,7 +270,7 @@ export default {
     margin: 0 auto;  
   }
   .avatar{
-    width: 80vw;
+    width: 80%;
     height: 80px;
     margin: auto;
     display: flex;
