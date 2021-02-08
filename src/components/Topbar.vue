@@ -23,7 +23,8 @@ export default {
   .top-bar{
     width: 100vw;
     height: 80px;
-    box-shadow:0 5px #E3E3E3;
+    /* box-shadow: 0 3px 6px rgba(227, 227, 227, 0.16); */
+    box-shadow:0 3px 6px #E3E3E3;
     background-color: white;
   }
   .back-arrow{

@@ -35,7 +35,7 @@
 </script>
 <style scoped>
   .home{
-    padding-top: 100px;
+    padding-top: 60px;
   }
   .nav{
     margin: 50px auto;

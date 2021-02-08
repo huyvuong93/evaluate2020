@@ -9,7 +9,7 @@
                 <img class="member-img" v-if =" group.booth_number == getBoothNumber "  
                 :src="require('@/assets/member_' + member.id + '.png')">
                 <p class="member-name" v-if =" group.booth_number == getBoothNumber "
-                style="font-family:'Hiragino,san-serif'">{{ member.name }}</p>
+                style="font-family:'Hiragino Kaku Gothic Pro'">{{ member.name }}</p>
             </div>
         </div>
     </div>
@@ -298,6 +298,7 @@ export default {
     .evaluate{
         max-width: 700px;
         padding-top: 100px;
+        padding-bottom: 50px;
         margin: auto;
     }
     .set-point div:nth-child(1) h3{

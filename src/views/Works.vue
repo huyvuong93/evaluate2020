@@ -50,11 +50,11 @@ export default {
                 if(this.search){
                     return student.booth_number.includes(this.search)
                 }
-                else if(this.showGrade == "1"){
-                    return student.grade.includes(this.showGrade = "1")
+                else if(this.showGrade === "2"){
+                    return student.grade.includes(this.showGrade = "2")
                 }
                 else{
-                    return student.grade.includes(this.showGrade = "2")
+                    return student.grade.includes(this.showGrade = "1")
                 }
             })
         },
@@ -90,6 +90,7 @@ export default {
 }
     .works{
         padding-top: 100px;
+        padding-bottom: 50px;
     }
     input{
         width:85%;
@@ -117,38 +118,42 @@ export default {
         width: 90%;
         display: flex;
         justify-content: space-between;
-        margin: 10px auto;
+        margin: 15px auto;
     }
     .btn-bg{
         background-color: white;
+        width: 46%;
     }
     .grade-button-group button{
-        width: 130px;
+        width: 100%;
+        display: block;
         padding: 20px 0;
         border: none;
         border-radius: 5px;
         box-shadow: 0 5px #E3E3E3;
         outline: none;
     }
-    .grade-button-group .active:focus{
+    /* .grade-button-group .active:active{
         background-color: #FF9D00;
         color: white;
         box-shadow: none;
         outline: none
     }
-    .grade-button-group .active2:focus{
+    .grade-button-group .active2:active{
         background-color: #00B1FF;
         color: white;
         box-shadow: none;
         outline: none
-    }
-    .active{
+    } */
+    .grade-button-group button.active{
         background-color:#FF9D00 ;
         color: white;
+        box-shadow: none;
     }
-    .active2{
+    .grade-button-group button.active2{
         background-color: #00B1FF;
         color: white;
+        box-shadow: none; 
     }
     .works-list{
         display: grid;
@@ -166,10 +171,11 @@ export default {
         -webkit-box-orient: vertical;
         font-family: 'Hiragino Kaku Gothic Pro',sans-serif;
         font-size: 10px;
-        font-weight:bold
+        font-weight:bold;
+        margin-top:5px
     }
     .worksimg{
         width: 100%;
-        box-shadow: 3px 3px 5px #CACACA;
+        box-shadow: 3px 3px 5px #e3e3e3;
     }
 </style>

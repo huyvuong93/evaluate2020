@@ -29,6 +29,7 @@
                 }
               }
             `"
+            :pollInterval = 2000
             :variables="{
                 student_id
             }"
