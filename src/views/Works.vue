@@ -22,7 +22,7 @@
                 </div>
                 <div style="display:flex;justify-content:left">
                     <div v-for="member in student.members" :key="member.id" >
-                        <div style="margin-right:5px;margin-top:5px;font-size:10px;font-family:'Hiragino,san-serif'">{{member.name}}</div>
+                        <div style="margin-right:5px;margin-top:5px;font-size:10px;font-family:'Hiragino Kaku Gothic Pro'">{{member.name}}</div>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ export default {
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
-        font-family: 'Hiragino',sans-serif;
+        font-family: 'Hiragino Kaku Gothic Pro',sans-serif;
         font-size: 10px;
         font-weight:bold
     }

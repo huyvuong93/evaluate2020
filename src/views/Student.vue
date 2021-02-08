@@ -41,7 +41,7 @@
                     <div> 
                         
                         <div v-for="student in data.students" :key="student.id"> 
-                          <div :class="changeClass" style="font-family:'Hiragino,san-serif';font-weight:bold">{{student.student_name}}</div>
+                          <div :class="changeClass" style="font-family:'Hiragino Kaku Gothic Pro';font-weight:bold">{{student.student_name}}</div>
                           <p class="presentation-count">トータル<span :class="changeClass">{{ student.evaluation.length }}</span>回プレゼンしました。</p>
                           <div v-if="student.evaluation_aggregate.aggregate.sum.design === null">
                             プレゼンを頑張ってください！
@@ -316,7 +316,7 @@ export default {
       width: 35px;
     }
   .hiragino-font{
-    font-family: 'Hiragino',sans-serif;
+    font-family: 'Hiragino Kaku Gothic Pro',sans-serif;
   }
   .evaluate-bg-design{
     background-color: #F56582;
