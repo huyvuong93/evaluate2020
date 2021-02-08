@@ -292,7 +292,7 @@ export default {
         text-align:left;
         width:100%;
         margin:10px 0;
-        font-family:'Hiragino'
+        font-family:'Hiragino Kaku Gothic Pro',sans-serif
     }
 
     .evaluate{
@@ -451,7 +451,7 @@ export default {
         color: white;
     }
     .point-title{
-        font-family: 'Hiragino';
+        font-family: 'Hiragino Kaku Gothic Pro',sans-serif;
         font-size: 12px;
         padding:10px 0
     }
