@@ -158,7 +158,7 @@ export default {
     .works-list{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 6px;
+        grid-gap: 13px;
         text-align: left;
         width: 90%;
         margin: 0 auto;

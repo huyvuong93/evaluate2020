@@ -109,7 +109,7 @@
             </div>
         </div>
         <div>
-            <p class="hiragino-font">その他何かありましたらコメントお願いいたします。</p>
+            <p class="hiragino-font">アドバイスや応援メッセージがございましたら、コメントお願いいたします。</p>
             <textarea name="comment" id="comment" cols="25" rows="4" v-model="comment"></textarea>
         </div>
         <button v-on:click="addEvaluation()">送信</button>
