@@ -338,7 +338,8 @@ export default {
         font-weight:bold ;
     }
     .modal img{
-        width: 250px;
+        width: 100%;
+        max-width: 300px;
     }
     .modal a{
         display: block;
